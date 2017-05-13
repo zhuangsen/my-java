@@ -1,8 +1,6 @@
 import java.util.Hashtable;
 
-/**
- * Created by madison on 2017/3/9.
- */
+
 public class MyLinkedList {
     Node head = null;//链表头的引用
 

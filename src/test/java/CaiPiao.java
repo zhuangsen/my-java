@@ -1,13 +1,21 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
+import java.util.*;
 
 
 public class CaiPiao{
 
     public static void main(String args[]){
+        while (true){
+            List<Integer> list = printC();
+            int blue = 9;
+            int len = list.size();
+            if(list.get(len-1) == blue){
+                return;
+            }
+        }
+    }
+
+    private static List printC(){
+        List<Integer> list = new ArrayList<>();
         Random random = new Random();
 
         //遍历红球
@@ -22,12 +30,12 @@ public class CaiPiao{
         }
 
 
-
         Collections.sort(reds);
         for(int r : reds){
             System.out.print(r+" ");
         }
-        System.out.println();
+
+        list.addAll(reds);
 
         //遍历蓝球
         int blue = random.nextInt(17);
@@ -35,5 +43,8 @@ public class CaiPiao{
             blue = random.nextInt(17);
         }
         System.out.print(blue);
+        System.out.println();
+        list.add(blue);
+        return list;
     }
 }

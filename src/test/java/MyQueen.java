@@ -1,8 +1,6 @@
 import java.util.LinkedList;
 
-/**
- * Created by madison on 2017/3/9.
- */
+
 class NodeQueen<E>{
     NodeQueen<E> next = null;
     E data;
