@@ -2,11 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by madison on 2017/3/2.
- */
-public class Main {
 
+public class Main {
     String str = new String("good");
     char[] ch = {'a','b','c'};
     public static void main(String[] args){
