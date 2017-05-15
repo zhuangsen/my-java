@@ -1,4 +1,3 @@
-package com.zs.test;
 
 public class Person {
 	private String id;
