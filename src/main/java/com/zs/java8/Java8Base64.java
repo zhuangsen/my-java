@@ -23,7 +23,6 @@ public class Java8Base64 {
             // 使用基本编码
             String base64encodedString = Base64.getEncoder().encodeToString("runoob?java8".getBytes("utf-8"));
             System.out.println("Base64 比那么字符串 (基本) :" + base64encodedString);
-
             // 解码
             byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);
 
