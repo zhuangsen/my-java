@@ -1212,7 +1212,17 @@ public class Algorithm {
 //        huiWenShu();
 //        youYi();
 //        System.out.println(houzi1(0));
-        System.out.println(diguiSum(4));
+//        System.out.println(diguiSum(4));
+    	
+    	int a =134;    
+    	int b =223;
+
+        a=a^b;
+        b=a^b;
+        a=a^b;  
+        
+        System.out.println(a);
+        System.out.println(b);
 
 
 

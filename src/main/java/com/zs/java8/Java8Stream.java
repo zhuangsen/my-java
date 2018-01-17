@@ -90,5 +90,9 @@ public class Java8Stream {
         System.out.println("所有数之和 : " + stats.getSum());
         System.out.println("平均数 : " + stats.getAverage());
 
+        System.out.println(System.currentTimeMillis());
+
+        String merOrderId = "AML12312";
+        System.out.println(merOrderId.substring(merOrderId.indexOf("AML")+3));
     }
 }
