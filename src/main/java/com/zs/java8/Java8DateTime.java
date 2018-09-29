@@ -61,6 +61,8 @@ public class Java8DateTime {
         // 解析字符串
         LocalTime date5 = LocalTime.parse("20:15:30");
         System.out.println("date5: " + date5);
+       
+        
     }
 
     public void testZonedDateTime() {

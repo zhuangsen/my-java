@@ -5,6 +5,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据。
@@ -89,6 +90,10 @@ public class Java8Stream {
         System.out.println("列表中最小的数 : " + stats.getMin());
         System.out.println("所有数之和 : " + stats.getSum());
         System.out.println("平均数 : " + stats.getAverage());
+        
+        System.out.println(IntStream.iterate(1, e -> e + 3).limit(34).sum());
+        
+        
 
         System.out.println(System.currentTimeMillis());
 

@@ -24,11 +24,10 @@ public class Java8Tester {
 
         Java8Tester tester = new Java8Tester();
         System.out.println("使用 Java 7 语法: ");
-
         tester.sortUsingJava7(names1);
         System.out.println(names1);
+        
         System.out.println("使用 Java 8 语法: ");
-
         tester.sortUsingJava8(names2);
         System.out.println(names2);
 
