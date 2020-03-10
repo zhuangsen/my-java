@@ -4,13 +4,16 @@ import java.util.*;
 public class CaiPiao{
 
     public static void main(String args[]){
-        while (true){
+//        while (true){
+//            List<Integer> list = printC();
+//            int blue = 9;
+//            int len = list.size();
+//            if(list.get(len-1) == blue){
+//                return;
+//            }
+//        }
+        for (int i = 0 ; i<5;i++){
             List<Integer> list = printC();
-            int blue = 9;
-            int len = list.size();
-            if(list.get(len-1) == blue){
-                return;
-            }
         }
     }
 
@@ -32,7 +35,7 @@ public class CaiPiao{
 
         Collections.sort(reds);
         for(int r : reds){
-            System.out.print(r+" ");
+            System.out.print(r+"\t");
         }
 
         list.addAll(reds);
