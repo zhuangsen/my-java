@@ -83,8 +83,8 @@ public class CompletionServiceTest {
             }
 
             for(int j = 0; j < 4; j++) {
-//                Future<String> take = service.take(); //这一行没有完成的任务就阻塞
-                Future<String> take = service.poll(); // 不等待，有结果就返回一个 Future 对象，否则返回 null。
+                Future<String> take = service.take(); //这一行没有完成的任务就阻塞
+//                Future<String> take = service.poll(); // 不等待，有结果就返回一个 Future 对象，否则返回 null。
                 if(Objects.nonNull(take)){
                     String result = take.get(); // 这一行在这里不会阻塞，引入放入队列中的都是已经完成的任务
                     System.out.println("获取到结果："+result);
