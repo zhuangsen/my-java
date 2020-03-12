@@ -11,9 +11,9 @@ import java.util.concurrent.*;
 public class CompletionServiceTest {
 
     public static void main(String[] args){
-//        test1();
-        test2();
-        System.out.println("-------------");
+        test1();
+//        test2();
+//        System.out.println("-------------");
 //        test3();
 //        test4();
     }
@@ -21,7 +21,7 @@ public class CompletionServiceTest {
     public static void test1(){
         Long start = System.currentTimeMillis();
         //开启3个线程
-        ExecutorService exs = Executors.newFixedThreadPool(5);
+        ExecutorService exs = Executors.newFixedThreadPool(8);
         try {
             int taskCount = 10;
             // 结果集

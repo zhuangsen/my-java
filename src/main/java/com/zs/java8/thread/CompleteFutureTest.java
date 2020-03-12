@@ -1,6 +1,8 @@
 package com.zs.java8.thread;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @auther: madisonzhuang
@@ -8,7 +10,41 @@ import java.util.concurrent.CompletableFuture;
  * @description:
  */
 public class CompleteFutureTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
+        CompletableFuture<String> completableFutureOne = new CompletableFuture<>();
+
+        ExecutorService cachePool = Executors.newCachedThreadPool();
+        cachePool.execute(() -> {
+            try {
+                Thread.sleep(3000);
+                completableFutureOne.complete("异步任务执行结果");
+                System.out.println(Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        // WhenComplete 方法返回的 CompletableFuture 仍然是原来的 CompletableFuture 计算结果.
+        CompletableFuture<String> completableFutureTwo = completableFutureOne.whenComplete((s, throwable) -> {
+            System.out.println("当异步任务执行完毕时打印异步任务的执行结果: " + s);
+        });
+
+        // ThenApply 方法返回的是一个新的 completeFuture.
+        CompletableFuture<String> completableFutureThree = completableFutureTwo.thenApply(s -> {
+            System.out.println("当异步任务执行结束时, 根据上一次的异步任务结果, 继续开始一个新的异步任务!");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return s+"----";
+        });
+
+        System.out.println("阻塞方式获取执行结果:" + completableFutureThree.get());
+
+        cachePool.shutdown();
+
+
+
         //1、变换结果
         // 说明：Async结尾的方法都是可以异步执行的，如果指定了线程池，会在指定的线程池中执行，如果没有指定，
         // 默认会在ForkJoinPool.commonPool()中执行。下面很多方法都是类似的，不再做特别说明。
@@ -66,7 +102,7 @@ public class CompleteFutureTest {
 
 
         //5、运行时出现了异常，可以通过exceptionally进行补偿
-        result = CompletableFuture.supplyAsync(()->{
+            result = CompletableFuture.supplyAsync(()->{
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
