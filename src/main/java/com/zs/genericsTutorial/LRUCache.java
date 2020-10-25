@@ -23,6 +23,7 @@ public class LRUCache<K, V> extends LinkedHashMap {
     }
 
 
+    @Override
     protected boolean removeEldestEntry(Map.Entry eldest) {
         return size() >= cacheSize;
     }

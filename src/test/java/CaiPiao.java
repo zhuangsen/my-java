@@ -1,9 +1,9 @@
 import java.util.*;
 
 
-public class CaiPiao{
+public class CaiPiao {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
 //        while (true){
 //            List<Integer> list = printC();
 //            int blue = 9;
@@ -12,42 +12,68 @@ public class CaiPiao{
 //                return;
 //            }
 //        }
-        for (int i = 0 ; i<5;i++){
-            List<Integer> list = printC();
-        }
+//        for (int i = 0; i < 5; i++) ssq();
+        for (int i = 0; i < 5; i++) dlt();
     }
 
-    private static List printC(){
-        List<Integer> list = new ArrayList<>();
+    private static void ssq() {
         Random random = new Random();
 
         //遍历红球
         List<Integer> reds = new ArrayList<Integer>();
         int red;
-        for(int i=0;i<6;i++){
+        for (int i = 0; i < 6; i++) {
             red = random.nextInt(34);
-            while(red==0 || reds.contains(red)){
+            while (red == 0 || reds.contains(red)) {
                 red = random.nextInt(34);
             }
             reds.add(red);
         }
-
-
         Collections.sort(reds);
-        for(int r : reds){
-            System.out.print(r+"\t");
+        for (int r : reds) {
+            System.out.print(r + "\t");
         }
-
-        list.addAll(reds);
 
         //遍历蓝球
         int blue = random.nextInt(17);
-        while(blue==0){
+        while (blue == 0) {
             blue = random.nextInt(17);
         }
         System.out.print(blue);
         System.out.println();
-        list.add(blue);
-        return list;
+    }
+
+    private static void dlt() {
+        Random random = new Random();
+
+        //遍历红球
+        List<Integer> reds = new ArrayList<>();
+        int red;
+        for (int i = 0; i < 5; i++) {
+            red = random.nextInt(35) + 1;
+            while (reds.contains(red)) {
+                red = random.nextInt(35) + 1;
+            }
+            reds.add(red);
+        }
+        Collections.sort(reds);
+        for (int r : reds) {
+            System.out.print(r + "\t");
+        }
+
+        //遍历蓝球
+        List<Integer> blues = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            int blue = random.nextInt(12) + 1;
+            while (blues.contains(blue)) {
+                blue = random.nextInt(12) + 1;
+            }
+            blues.add(blue);
+        }
+        Collections.sort(blues);
+        for (int b : blues) {
+            System.out.print(b + "\t");
+        }
+        System.out.println();
     }
 }
