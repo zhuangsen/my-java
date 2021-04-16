@@ -2,7 +2,7 @@ package com.zs.letcode.easy.linked;
 
 /**
  * 删除链表的倒数第N个节点
- * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+ * 给定一个链表，删除链表的倒数第n个节点，并且返回链表的头结点。
  * <p>
  * 示例：
  * <p>
@@ -11,7 +11,7 @@ package com.zs.letcode.easy.linked;
  * 当删除了倒数第二个节点后，链表变为 1->2->3->5.
  * 说明：
  * <p>
- * 给定的 n 保证是有效的。
+ * 给定的 n保证是有效的。
  * <p>
  * 进阶：
  * <p>
@@ -37,10 +37,10 @@ public class Chapter2 {
         node1.next = node2;
         node2.next = node3;
         node3.next = tail;
-        System.out.println(head);
-        ListNode removeNode = removeNthFromEnd3(head, 5);
+//        System.out.println(head);
+        ListNode removeNode = removeNthFromEnd3(head, 2);
         System.out.println(removeNode);
-        System.out.println(head);
+//        System.out.println(head);
     }
 
     /**
@@ -110,7 +110,6 @@ public class Chapter2 {
         for (int i = 0; i < n + 1; i++) {
             first = first.next;
         }
-        System.out.println(first);
         while (first != null) {
             first = first.next;
             second = second.next;

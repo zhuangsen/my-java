@@ -6,22 +6,21 @@ package com.zs.letcode.easy.linked;
  * <p>
  *  
  * <p>
- * 现有一个链表 -- head = [4,5,1,9]，它可以表示为:
+ * 现有一个链表 --head =[4,5,1,9]，它可以表示为:
  * <p>
  * <p>
  * <p>
- *  
  * <p>
  * 示例 1：
  * <p>
  * 输入：head = [4,5,1,9], node = 5
  * 输出：[4,1,9]
- * 解释：给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
+ * 解释：给定你链表中值为5的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
  * 示例 2：
  * <p>
  * 输入：head = [4,5,1,9], node = 1
  * 输出：[4,5,9]
- * 解释：给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
+ * 解释：给定你链表中值为1的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
  *  
  * <p>
  * 提示：
@@ -54,7 +53,7 @@ public class Chapter1 {
         System.out.println(head);
 //        deleteNode1(node2);
 //        System.out.println(head);
-        deleteNode2(head, tail);
+        deleteNode2(head, node2);
         System.out.println(head);
     }
 
