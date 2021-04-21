@@ -73,7 +73,6 @@ public class Chapter1 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        ;
         int p = 0;
         int q = 1;
         while (q < nums.length) {

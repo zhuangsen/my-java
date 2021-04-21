@@ -36,6 +36,11 @@ public class Chapter3 {
         System.out.println(reverseList(head));
     }
 
+    /**
+     * 方法一：迭代
+     * @param head
+     * @return
+     */
     public static ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
@@ -46,6 +51,22 @@ public class Chapter3 {
             curr = nextNode;
         }
         return prev;
+    }
+
+    /**
+     * 方法二：递归
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList2(ListNode head){
+        // 递归终止条件
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode p = reverseList2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
     }
 
     static class ListNode {
