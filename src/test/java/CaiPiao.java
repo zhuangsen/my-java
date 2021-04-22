@@ -12,8 +12,8 @@ public class CaiPiao {
 //                return;
 //            }
 //        }
-//        for (int i = 0; i < 5; i++) ssq();
-        for (int i = 0; i < 5; i++) dlt();
+        for (int i = 0; i < 1; i++) ssq();
+//        for (int i = 0; i < 5; i++) dlt();
     }
 
     private static void ssq() {

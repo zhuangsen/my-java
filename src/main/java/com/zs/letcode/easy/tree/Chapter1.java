@@ -45,10 +45,11 @@ public class Chapter1 {
         left.left = leftL;
         right.right = rightR;
 //        TreeNode root = new TreeNode(3, left, right);
-        System.out.println(root);
-        Solution s= new Solution();
+        Solution s = new Solution();
 //        System.out.println(s.maxDepth(root));
         System.out.println(s.maxDepth1(root));
+
+        TreeOperation.show(root);
     }
 
     static class Solution {
@@ -84,32 +85,5 @@ public class Chapter1 {
             }
             return ans;
         }
-    }
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-//        @Override
-//        public String toString() {
-//            if (this.left == null && this.right == null) {
-//                return String.valueOf(this.val);
-//            }
-//            return this.val + "," + this.left == null ? "null" : this.left.toString() + "," + this.right == null ? "null" : this.right.toString();
-//        }
     }
 }

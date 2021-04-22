@@ -42,7 +42,63 @@ public class Chapter2 {
         System.out.println(maxProfit(prices));
     }
 
+    /**
+     * 1，动态规划解决
+     *
+     * @param prices
+     * @return
+     */
     public static int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int length = prices.length;
+        int[][] dp = new int[length][2];
+        //边界条件
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < length; i++) {
+            //递推公式
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+        }
+        //毋庸置疑，最后肯定是手里没持有股票利润才会最大，也就是卖出去了
+        return dp[length - 1][0];
+    }
+
+    /**
+     * 2，代码优化
+     * 我们看到上面二维数组中计算当天的最大利润只和前一天的利润有关，所以没必要使用二维数组，
+     * 只需要使用两个变量即可，一个表示当天持有股票的最大利润，一个表示当天没持有股票的最大利润，代码如下。
+     * [7,1,5,3,6,4]
+     *
+     * @param prices
+     * @return
+     */
+    public static int maxProfit1(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int length = prices.length;
+        int hold = -prices[0];//持有股票
+        int noHold = 0;//不持有股票
+        for (int i = 1; i < length; i++) {
+            //递归公式
+            noHold = Math.max(noHold, hold + prices[i]);
+            hold = Math.max(hold, noHold - prices[i]);
+        }
+        //毋庸置疑，最后肯定是手里没持有股票利润才会最大，
+        //也就是卖出去了
+        return noHold;
+    }
+
+    /**
+     * 3，贪心算法解决
+     *
+     * @param prices
+     * @return
+     */
+    public static int maxProfit2(int[] prices) {
         int maxprofit = 0;
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] > prices[i - 1]) {
