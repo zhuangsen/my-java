@@ -69,7 +69,7 @@ import java.util.Map;
 public class Chapter4 {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.romanToInt2("LVIII"));
+        System.out.println(solution.romanToInt2("MCMXCIV"));
     }
 
     private static class Solution {
