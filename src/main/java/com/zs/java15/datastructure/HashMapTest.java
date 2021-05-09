@@ -1,6 +1,9 @@
 package com.zs.java15.datastructure;
 
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author madison
@@ -20,8 +23,15 @@ public class HashMapTest {
         // 优点：降低内存、降低数组长度
         // 缺点：hash冲突、碰撞
         HashMap<String, String> map = new HashMap<>();
+        Hashtable hashtable = new Hashtable();
         map.put("1", "2");
         System.out.println(map.get("1"));
+
+//        使用 entrySet 遍历 Map 类集合 KV，而不是 keySet 方式进行遍历。
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        for (Map.Entry<String, String> kvSet : entries) {
+            System.out.printf("K:%s---v:%s\r\n", kvSet.getKey(), kvSet.getValue());
+        }
 
         char[] c = "lies".toCharArray();
         for (int i = 0; i < c.length; i++) {
@@ -33,8 +43,8 @@ public class HashMapTest {
         mapTest.put("电视上", "2");
         mapTest.put("士大夫撒地方", "2");
 
-        com.zs.java15.datastructure.HashMap<String,String> hashMap = new com.zs.java15.datastructure.HashMap();
-        hashMap.put("第三方","sdfsd");
+        com.zs.java15.datastructure.HashMap<String, String> hashMap = new com.zs.java15.datastructure.HashMap();
+        hashMap.put("第三方", "sdfsd");
         System.out.println(hashMap.get("第三方"));
     }
 

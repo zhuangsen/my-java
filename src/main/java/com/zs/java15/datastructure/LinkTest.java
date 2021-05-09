@@ -19,6 +19,7 @@ public class LinkTest {
         System.out.println(head.next.next.data);
 
         /** Java 集合类 {@link java.util.LinkedList} **/
+
     }
 
     static class Node {
