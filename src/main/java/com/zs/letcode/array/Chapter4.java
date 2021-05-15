@@ -56,4 +56,10 @@ public class Chapter4 {
     public static void main(String[] args) {
 
     }
+
+    private static class Solution {
+        public int removeDuplicates(int[] nums) {
+
+        }
+    }
 }
