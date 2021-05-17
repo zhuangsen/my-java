@@ -32,11 +32,18 @@ import java.util.concurrent.Semaphore;
  */
 public class SynchronousRunning8 {
 
-    private static Semaphore semaphore1 = new Semaphore(1);
-    private static Semaphore semaphore2 = new Semaphore(1);
+    private static Semaphore semaphore1 = new Semaphore(0);
+    private static Semaphore semaphore2 = new Semaphore(0);
 
     public static void main(String[] args) {
         final Thread thread1 = new Thread(() -> {
+//            try {
+//                semaphore1.release();
+//                semaphore1.acquire();
+//
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             System.out.println("产品经理规划新需求");
             semaphore1.release();
         });
@@ -54,8 +61,8 @@ public class SynchronousRunning8 {
         Thread thread3 = new Thread(() -> {
             try {
                 semaphore2.acquire();
-                thread2.join();
-                semaphore2.release();
+//                thread2.join();
+//                semaphore2.release();
                 System.out.println("测试人员测试新功能");
             } catch (InterruptedException e) {
                 e.printStackTrace();

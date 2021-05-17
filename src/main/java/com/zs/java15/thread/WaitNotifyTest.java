@@ -1,4 +1,4 @@
-package com.zs.java15.base;
+package com.zs.java15.thread;
 
 /**
  * @author madison
