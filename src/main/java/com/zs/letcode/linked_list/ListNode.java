@@ -17,4 +17,12 @@ public class ListNode {
         this.val = x;
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        if (this.next == null) {
+            return String.valueOf(this.val);
+        }
+        return String.format("%d->%s", this.val, this.next.toString());
+    }
 }
